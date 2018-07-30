@@ -1,0 +1,31 @@
+{
+  "name": "ispawned",
+  "version": "1.0.0",
+  "description": "Is pawned frontend implemented in reac",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "./node_modules/.bin/parcel src/index.html",
+    "build": "./node_modules/.bin/parcel build src/index.html"
+  },
+  "keywords": [
+    "react",
+    "ispawned",
+    "email",
+    "security"
+  ],
+  "dependencies": {
+    "axios": "^0.18.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "vex-js": "^4.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "parcel-bundler": "^1.9.7"
+  },
+  "author": "Indrajith K L <mac91112@gmail.com>",
+  "license": "MIT"
+}

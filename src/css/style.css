@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'RMTyperighter';
+    src: url(font/larabiefontrg.ttf) format('truetype');
+}
+
+html, body{
+    font-family: 'RMTyperighter' !important;
+}
+
+body
+{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    height: calc(100vh);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer,header {
+  background:lightgray;
+}
+
+/* Other Styles */
+.vex.vex-theme-wireframe .vex-content {
+    font-family: 'RMTyperighter' !important;
+}
+
+.kool-button-black{
+    background: #000;
+    color: #fff;
+    border: 2px solid transparent;
+    padding: .75em 2em;
+    cursor: pointer;
+    font-family: RMTyperighter;
+}
+
+.kool-button-white{
+    background: #fff;
+    color: #000;
+    border: 2px solid transparent;
+    padding: .75em 2em;
+    cursor: pointer;
+}
+.searchWrapper{
+    display: flex;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+.search{
+    
+}
+.searchResults {
+    padding-top: 21px;
+    max-height: 400px;
+    overflow: auto;
+    margin: 0 .4rem;
+}
+.searchResults div{margin: 5px 0}
+.search .email-field{
+    border: 1px solid #000;
+    height: 46px;
+    width: 375px;
+    font-family: RMTyperighter;
+    font-size: 18px;
+    padding: 3px;
+}
+
+.check-button{
+    height: 52px;
+    padding-bottom: 7px;
+    margin-left: 11px;
+}
+
+.title{
+    font-size: 45px;
+}
