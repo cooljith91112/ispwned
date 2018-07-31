@@ -1,16 +1,23 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
+import renderHTML from 'react-render-html';
+import './PawnedListItem.css';
+export default class PawnedListItem extends Component {
 
-export default class PawnedListItem extends Component{
-
-    constructor(props){
+    constructor(props) {
         super(props);
     }
 
-    render(){
-        return(
-           <div>
-               {this.props.breach.Description}
-           </div>
+    render() {
+        return (
+            <div className="breach">
+                <div className="breach-name">
+                    {this.props.breach.Domain}
+                </div>
+                <div className="breach-description">
+                    {renderHTML(this.props.breach.Description)}
+                </div>
+
+            </div>
         )
     }
 }

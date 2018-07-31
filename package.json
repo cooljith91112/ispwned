@@ -17,6 +17,7 @@
     "axios": "^0.18.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-render-html": "^0.6.0",
     "vex-js": "^4.1.0"
   },
   "devDependencies": {

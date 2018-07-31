@@ -48,38 +48,3 @@ footer,header {
     padding: .75em 2em;
     cursor: pointer;
 }
-.searchWrapper{
-    display: flex;
-    width: 500px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column
-}
-.search{
-    
-}
-.searchResults {
-    padding-top: 21px;
-    max-height: 400px;
-    overflow: auto;
-    margin: 0 .4rem;
-}
-.searchResults div{margin: 5px 0}
-.search .email-field{
-    border: 1px solid #000;
-    height: 46px;
-    width: 375px;
-    font-family: RMTyperighter;
-    font-size: 18px;
-    padding: 3px;
-}
-
-.check-button{
-    height: 52px;
-    padding-bottom: 7px;
-    margin-left: 11px;
-}
-
-.title{
-    font-size: 45px;
-}

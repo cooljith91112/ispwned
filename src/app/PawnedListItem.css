@@ -1,0 +1,18 @@
+
+.breach-name {
+    font-size: 19px;
+    color: red;
+    font-weight: bold;
+}
+
+
+.breach-description a{
+    color: #565656;
+    font-weight: bold;
+}
+
+
+
+.breach {
+    padding-bottom: 10px;
+}
