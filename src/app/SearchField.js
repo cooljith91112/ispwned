@@ -36,7 +36,7 @@ export default class SearchField extends Component {
             <div className="searchWrapper">
                 <div className="search">
                     <div className="title">
-                        <label class="hover-field">
+                        <label class="hover-field glitch-text" data-text="isPawned">
                             isPawned
                         <span>Check wheather your email address is Pawned anywhere</span>
                         </label>
