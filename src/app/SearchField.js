@@ -37,8 +37,8 @@ export default class SearchField extends Component {
             <div className="searchWrapper">
                 <div className="search">
                     <div className="title">
-                        <label className="hover-field glitch-text" data-text="isPawned">
-                            isPawned
+                        <label className="hover-field glitch-text" data-text="notPwned">
+                            isPwned
                         <span>Check wheather your email address is Pawned anywhere</span>
                         </label>
                     </div>
@@ -84,7 +84,7 @@ export default class SearchField extends Component {
             const breachList = response.data;
             this.setState({
                 pawnedList: response.data,
-                displayMessage: `Your email address is Pawned on ${breachList.length} websites`,
+                displayMessage: `Your email address is Pwned on ${breachList.length} websites`,
                 displayMessageStyle: 'not-safe-message'
             });
         }).catch((error) => {
