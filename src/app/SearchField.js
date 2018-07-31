@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import PawnedListItem from './PawnedListItem';
 import './SearchField.css';
+import SoundCloudAudio from 'soundcloud-audio';
 
 export default class SearchField extends Component {
 
@@ -20,6 +21,8 @@ export default class SearchField extends Component {
         this.checkIsPawned = this.checkIsPawned.bind(this);
         this.breachItems = [];
         this.displayMessage;
+        this.musicPlayer = new SoundCloudAudio('1b0ff6d5c4606e7fdf5d744be591b5a4');
+        console.log(SoundCloudAudio);
     }
 
     render() {
@@ -36,7 +39,7 @@ export default class SearchField extends Component {
             <div className="searchWrapper">
                 <div className="search">
                     <div className="title">
-                        <label class="hover-field glitch-text" data-text="isPawned">
+                        <label className="hover-field glitch-text" data-text="isPawned">
                             isPawned
                         <span>Check wheather your email address is Pawned anywhere</span>
                         </label>
@@ -50,9 +53,26 @@ export default class SearchField extends Component {
                 </div>
                 <div className="searchResults">
                     {this.breachItems}
-                </div>
+                </div> 
             </div>
         );
+    }
+
+    componentDidMount() {
+        this.musicPlayer.stop(); // fallback
+        if (!this.musicPlayer.playing) {
+            this.musicPlayer.resolve('https://soundcloud.com/djangodjango/first-light', (playlist) => {
+
+                console.log(playlist);
+
+                this.musicPlayer.play();
+
+                this.musicPlayer.on('ended', () => {
+                    this.musicPlayer.play();
+
+                });
+            });
+        }
     }
 
     onFocus(e) {
