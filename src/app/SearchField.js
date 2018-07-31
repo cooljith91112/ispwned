@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import PawnedListItem from './PawnedListItem';
 import './SearchField.css';
-import SoundCloudAudio from 'soundcloud-audio';
 
 export default class SearchField extends Component {
 
@@ -21,8 +20,7 @@ export default class SearchField extends Component {
         this.checkIsPawned = this.checkIsPawned.bind(this);
         this.breachItems = [];
         this.displayMessage;
-        this.musicPlayer = new SoundCloudAudio('1b0ff6d5c4606e7fdf5d744be591b5a4');
-        console.log(SoundCloudAudio);
+
     }
 
     render() {
@@ -59,20 +57,7 @@ export default class SearchField extends Component {
     }
 
     componentDidMount() {
-        this.musicPlayer.stop(); // fallback
-        if (!this.musicPlayer.playing) {
-            this.musicPlayer.resolve('https://soundcloud.com/djangodjango/first-light', (playlist) => {
 
-                console.log(playlist);
-
-                this.musicPlayer.play();
-
-                this.musicPlayer.on('ended', () => {
-                    this.musicPlayer.play();
-
-                });
-            });
-        }
     }
 
     onFocus(e) {
@@ -92,7 +77,6 @@ export default class SearchField extends Component {
         this.setState({
             intiated: true
         });
-        console.log(this.state.isPawnedEmail)
         axios({
             method: 'get',
             url: `https://haveibeenpwned.com/api/v2/breachedaccount/${this.state.isPawnedEmail}`
@@ -104,7 +88,6 @@ export default class SearchField extends Component {
                 displayMessageStyle: 'not-safe-message'
             });
         }).catch((error) => {
-            console.log('Error ', error);
             if (error.response.status === 404) {
                 this.setState({
                     displayMessage: `You are safe now.`,
