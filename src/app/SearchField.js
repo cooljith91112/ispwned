@@ -43,7 +43,6 @@ export default class SearchField extends Component {
                     </div>
                     <input className="email-field pulse" type="email" placeholder="Enter an Email ID" onKeyPress={(event) => { if (event.key == 'Enter') this.checkIsPawned.call() }} onChange={(event) => this.setState({ isPawnedEmail: event.target.value })} required onFocus={this.onFocus} onBlur={this.onBlur} />
                     <button className="kool-button-black check-button hover-field" onClick={this.checkIsPawned}>Check
-                    <span>Click to know</span>
                     </button>
                 </div>
                 <div className={`display-message ${this.state.displayMessageStyle}`}>
