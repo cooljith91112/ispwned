@@ -10,7 +10,7 @@ export default class App extends Component {
         this.musicPlayer = new SoundCloudAudio('1b0ff6d5c4606e7fdf5d744be591b5a4');
         vex.defaultOptions.className = 'vex-theme-wireframe';
         vex.defaultOptions.afterClose = ()=>{
-            this.playMusic();
+            // this.playMusic(); //mute music for good
         }
 
         this.playMusic = this.playMusic.bind(this);
