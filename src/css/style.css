@@ -24,9 +24,6 @@ body
     width: fit-content;
 }
 
-footer,header {
-  background:lightgray;
-}
 
 /* Other Styles */
 .vex.vex-theme-wireframe .vex-content {
@@ -50,14 +47,3 @@ footer,header {
     cursor: pointer;
 }
 
-footer .things{
-    display: inline-flex;
-    padding-right: 10px;
-}
-
-.things .child{
-    background: #a2a1a1;
-    padding-left: 5px;
-    padding-right: 5px;
-    font-weight: bold
-}

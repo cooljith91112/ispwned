@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import PawnedListItem from './PawnedListItem';
 import './SearchField.css';
+import Footer from './Footer';
 
 export default class SearchField extends Component {
 
@@ -34,24 +35,29 @@ export default class SearchField extends Component {
         }
 
         return (
-            <div className="searchWrapper">
-                <div className="search">
-                    <div className="title">
-                        <label className="hover-field glitch-text" data-text="notPwned">
-                            isPwned
+            <div>
+                <div id="wrapper">
+                    <div className="searchWrapper">
+                        <div className="search">
+                            <div className="title">
+                                <label className="hover-field glitch-text" data-text="notPwned">
+                                    isPwned
                         <span>Check wheather your email address is Pawned anywhere</span>
-                        </label>
-                    </div>
-                    <input className="email-field pulse" type="email" placeholder="Enter an Email ID" onKeyPress={(event) => { if (event.key == 'Enter') this.checkIsPawned.call() }} onChange={(event) => this.setState({ isPawnedEmail: event.target.value })} required onFocus={this.onFocus} onBlur={this.onBlur} />
-                    <button className="kool-button-black check-button hover-field" onClick={this.checkIsPawned}>Check
+                                </label>
+                            </div>
+                            <input className="email-field pulse" type="email" placeholder="Enter an Email ID" onKeyPress={(event) => { if (event.key == 'Enter') this.checkIsPawned.call() }} onChange={(event) => this.setState({ isPawnedEmail: event.target.value })} required onFocus={this.onFocus} onBlur={this.onBlur} />
+                            <button className="kool-button-black check-button hover-field" onClick={this.checkIsPawned}>Check
                     </button>
+                        </div>
+                        <div className={`display-message ${this.state.displayMessageStyle}`}>
+                            {this.state.displayMessage}
+                        </div>
+                        <div className="searchResults">
+                            {this.breachItems}
+                        </div>
+                    </div>
                 </div>
-                <div className={`display-message ${this.state.displayMessageStyle}`}>
-                    {this.state.displayMessage}
-                </div>
-                <div className="searchResults">
-                    {this.breachItems}
-                </div> 
+                <Footer />
             </div>
         );
     }
