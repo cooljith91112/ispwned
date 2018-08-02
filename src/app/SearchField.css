@@ -211,4 +211,33 @@
     text-shadow: 2px 0 blue;
     animation: glitch-text-anim-2 3s infinite linear alternate-reverse;
   }
+
+  /* Scrollbar styles */
+  /* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #fff; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #000; 
+  
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #272727;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-button {
+background: #636363;
+  color: #fff;
+  height: 10px;
+}
   
