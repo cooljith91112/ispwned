@@ -50,6 +50,17 @@
     padding: 3px;
 }
 
+.konami .search .email-field{
+  border: 1px solid #fff;
+  height: 46px;
+  width: 375px;
+  font-family: RMTyperighter;
+  font-size: 18px;
+  padding: 3px;
+  background: #4b4b4b;
+}
+
+
 .hover-field {
     text-decoration: none
 }
@@ -61,6 +72,13 @@
     font-size: 12px;
     color: #000;
 }
+
+.konami .hover-field span {
+  display: none;
+  font-size: 12px;
+  color: #fff;
+}
+
 .hover-field:hover span {
     border: #8f8e8e 1px solid;
     padding: 5px 20px 5px 5px;
@@ -80,6 +98,14 @@
     color: black;
     position: relative;
   }
+
+  .konami .glitch-text {
+    /* font-size: 100px; */
+    color: white;
+    position: relative;
+  }
+
+  
   @keyframes glitch-text-anim-1 {
     0% {
       clip: rect(24px, 450px, 67px, 0);
@@ -201,6 +227,17 @@
     background: white;
     clip: rect(0, 0, 0, 0);
   }
+
+  .konami .glitch-text:before, .konami .glitch-text:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #000;
+    clip: rect(0, 0, 0, 0);
+  }
+
   .glitch-text:after {
     left: 2px;
     text-shadow: -1px 0 red;

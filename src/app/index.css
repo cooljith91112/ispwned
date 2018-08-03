@@ -1,0 +1,21 @@
+.konami *{
+    background: #000;
+    color: #fff;
+}
+
+.konami .kool-button-black{
+    background: #fff;
+    color: #000;
+    border: 2px solid transparent;
+    padding: .75em 2em;
+    cursor: pointer;
+    font-family: RMTyperighter;
+}
+
+.konami .kool-button-white{
+    background: #000;
+    color: #fff;
+    border: 2px solid transparent;
+    padding: .75em 2em;
+    cursor: pointer;
+}
