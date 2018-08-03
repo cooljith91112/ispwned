@@ -11,7 +11,7 @@ export default class PawnedListItem extends Component {
         return (
             <div className="breach">
                 <div className="breach-name">
-                    {this.props.breach.Domain}
+                    {this.props.breach.Title} ({this.props.breach.Domain?this.props.breach.Domain:'No Domain'})
                 </div>
                 <div className="breach-description">
                     {renderHTML(this.props.breach.Description)}
