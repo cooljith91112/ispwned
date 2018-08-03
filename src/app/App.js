@@ -1,15 +1,15 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import SearchField from './SearchField';
 import vex from 'vex-js/dist/js/vex.combined';
 import SoundCloudAudio from 'soundcloud-audio';
 import './index.css';
 export default class App extends Component {
-    
-    constructor(props){
+
+    constructor(props) {
         super(props);
         this.musicPlayer = new SoundCloudAudio('1b0ff6d5c4606e7fdf5d744be591b5a4');
         vex.defaultOptions.className = 'vex-theme-wireframe';
-        vex.defaultOptions.afterClose = ()=>{
+        vex.defaultOptions.afterClose = () => {
             // this.playMusic(); //mute music for good
         }
 
@@ -19,20 +19,20 @@ export default class App extends Component {
         };
     }
 
-    componentDidMount(){
+    componentDidMount() {
         vex.dialog.alert('This website is for educational purpose only. Every data is fetched from haveibeenpwned.com');
         this.konamiListener();
     }
-    
-    render(){
-        return(
+
+    render() {
+        return (
             <div id="content" className={`${this.state.konamiKlass}`}>
-            <SearchField />
+                <SearchField />
             </div>
         );
     }
 
-    playMusic(){
+    playMusic() {
         this.musicPlayer.stop(); // fallback
         if (!this.musicPlayer.playing) {
             this.musicPlayer.resolve('https://soundcloud.com/djangodjango/first-light', (playlist) => {
@@ -47,21 +47,28 @@ export default class App extends Component {
         }
     }
 
-    konamiListener(){
-        if ( window.addEventListener ) {
+    konamiListener() {
+        if (window.addEventListener) {
             var kkeys = [], konami = "38,38,40,40,37,39,37,39,66,65";
-            window.addEventListener("keydown", (e)=>{
-                kkeys.push( e.keyCode );
+            window.addEventListener("keydown", (e) => {
+                kkeys.push(e.keyCode);
                 // debugger;
-                if ( kkeys.toString().indexOf( konami ) >= 0 ){
+                if (kkeys.toString().indexOf(konami) >= 0) {
                     // console.log('Aila');
                     this.setState({
-                        konamiKlass:'konami'
+                        konamiKlass: 'konami'
                     });
                     this.playMusic();
+                    this.konamiImage();
                     kkeys = [];
-        }
+                }
             }, true);
         }
+    }
+
+
+    konamiImage() {
+        console.log('%c Konami Code Unlocked', 'background: #222; color: #bada55; font-weight: bold; font-size: 20px; padding: 10px');
+
     }
 }
