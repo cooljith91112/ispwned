@@ -35,7 +35,7 @@ export default class App extends Component {
     playMusic() {
         this.musicPlayer.stop(); // fallback
         if (!this.musicPlayer.playing) {
-            this.musicPlayer.resolve('https://soundcloud.com/djangodjango/first-light', (playlist) => {
+            this.musicPlayer.resolve('https://soundcloud.com/gunshipmusic/tech-noir', (playlist) => {
 
                 this.musicPlayer.play();
 
