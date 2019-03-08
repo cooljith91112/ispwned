@@ -85,7 +85,7 @@ export default class SearchField extends Component {
         });
         axios({
             method: 'get',
-            url: `https://haveibeenpwned.com/api/v2/breachedaccount/${this.state.isPawnedEmail}`
+            url: `https://ispwned.glitch.me/${this.state.isPawnedEmail}`
         }).then((response) => {
             const breachList = response.data;
             this.setState({
